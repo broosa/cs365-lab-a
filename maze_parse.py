@@ -1,19 +1,6 @@
 import sys
 import os
 
-
-CELL_EMPTY = 0
-CELL_WALL = 1
-CELL_PRIZE = 2
-CELL_START = 3
-
-CELL_TYPE_MAP = {
-    "%": CELL_WALL,
-    " ": CELL_EMPTY,
-    ".": CELL_PRIZE,
-    "P": CELL_START
-}
-
 class Maze(object):
 
     def __init__(self, filename):
@@ -53,7 +40,19 @@ class Maze(object):
         return len(self.cells[0])
 
 class Cell(object):
-    
+	
+    CELL_EMPTY = 0
+    CELL_WALL = 1
+    CELL_PRIZE = 2
+    CELL_START = 3
+
+    CELL_TYPE_MAP = {
+        " ": CELL_EMPTY,
+        "%": CELL_WALL,
+        ".": CELL_PRIZE,
+        "P": CELL_START
+    }
+
     def __init__(self, maze, row, col, cell_type):
         self.maze = maze
         self.row = row
